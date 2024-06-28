@@ -46,6 +46,55 @@
 
     // 👉 CHALLENGE 1 - Integers
     class Integers {
+      constructor(...args) {
+        this.ints = args;
+      }
+      
+      getAll(ints) {
+        return this.ints;
+      }
+
+      getEvens(ints) {
+        const evenInts = [];
+        const arr = [];
+
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 === 0) {
+            evenInts.push(arr[i]);
+          }
+        }
+        return this.ints;
+      }
+      
+
+      getNegatives(ints) {
+        const arr = [];
+        const negativeInts = arr.filter(number => number < 0);
+
+        return this.ints;
+      }
+
+      getAllSquared(ints) {
+
+      }
+
+      pop(ints) {
+
+      }
+
+      push(ints) {
+
+      }
+
+      getEveryNth(ints) {
+
+      }
+
+      getAllReversed(ints) {
+
+      }
+
+
       // 🧠 Constructor takes **any** number of arguments, which are integers
       // 🧠 Instances have an `ints` property which is an array holding the integers above in the same order
       // 🧠 Implement a `getAll` method which returns the data held in the `ints` property
@@ -58,7 +107,7 @@
       // 🧠 Implement a `getAllReversed` method which returns the ints in reverse order
       // ❗ WARNING: except for `getAllReversed`, methods must respect the order of the integers
       // ❗ WARNING: note that none of the methods actually mutate the `ints` property
-
+      
     }
 
     // 👉 CHALLENGE 2 NerfGun
