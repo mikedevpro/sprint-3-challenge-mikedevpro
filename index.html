@@ -58,28 +58,37 @@
         const evenInts = [];
         const arr = [];
 
-        for (let i = 0; i < arr.length; i++) {
-          if (arr[i] % 2 === 0) {
-            evenInts.push(arr[i]);
+        for (let i = 0; i < this.ints.length; i++) {
+          if (this.ints[i] % 2 === 0) {
+            evenInts.push(this.ints[i]);
           }
         }
-        return this.ints;
+        return evenInts;
       }
       
 
       getNegatives(ints) {
+        const negativeInts = [];
         const arr = [];
-        const negativeInts = arr.filter(number => number < 0);
-
-        return this.ints;
+        
+        for (let i = 0; i < this.ints.length; i++) {
+          if (this.ints[i] < 0) {
+            negativeInts.push(this.ints[i]);
+          }
+        }
+        return negativeInts;
       }
 
       getAllSquared(ints) {
+        const squaredInts = [];
+        const squared = this.ints.map(ints => ints * ints)
+
+        return squared;
 
       }
 
       pop(ints) {
-
+        
       }
 
       push(ints) {
