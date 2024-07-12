@@ -187,9 +187,23 @@
 
     // 👉 CHALLENGE 3 EBook
     class EBook {
-      constructor(str, char) {
-        
+      constructor(text, charsPerPage) {
+        this.text = text;
+        this.charsPerPage = charsPerPage;
+        this.currentPageIndex = 0;
       }
+      
+      next() {
+        const start = this.currentPageIndex * this.charsPerPage;
+        const end = start + this.charsPerPage; 
+        const page = this.text.slice(start, end);
+          if (page.length === 0) {
+            return null;
+          }
+          this.currentPageIndex++; 
+          return page;
+        }
+
       // 🧠 Constructor takes two arguments:
       //      * First arg is a string with the whole text of the book
       //      * Second arg is the number of characters contained in a single page of the book
