@@ -88,19 +88,31 @@
       }
 
       pop(ints) {
-        
+        const goodInts = [];
+        const last = this.ints.pop();
+
+        return last;
       }
 
       push(ints) {
+        const newInt = [];
+        newInt.push(this.ints);
 
+        return newInt;
       }
 
       getEveryNth(ints) {
+        const newNth = [];
+        const n = 1;
 
+        const nthElement = newNth[n + 1];
+
+        return nthElement;
       }
 
       getAllReversed(ints) {
-
+        const reversedInts = [];
+        reversedInts.reverse();
       }
 
 
@@ -121,6 +133,42 @@
 
     // 👉 CHALLENGE 2 NerfGun
     class NerfGun {
+      constructor(totalProjectiles) {
+        this.maxCapacity = totalProjectiles;
+        this.currentCapacity = totalProjectiles;
+        this.safetyOn = true;
+      }
+
+      shoot() {
+        if (this.currentCapacity > 0 && !this.safetyOn) {
+          this.currentCapacity--;
+          return "Bang!";
+        } else {
+          return "Click!";
+        }
+      }
+
+      reload(number) {
+        if (typeof number !== 'number' || number <= 0) {
+            return "Error reloading!";
+        }
+
+        this.currentCapacity += number;
+
+        if (this.currentCapacity > this.maxCapacity) {
+          this.currentCapacity = this.maxCapacity;
+        }
+        return `${this.currentCapacity} projectiles left!`;
+      }
+
+      toggleSafety() {
+        this.safetyOn = !this.safetyOn;
+        return this.safetyOn ? "Safety enabled!" : "Safety disabled!"
+      }
+      
+      
+
+
       // 🧠 Constructor takes one argument: the total number of projectiles supported by the instance
       // 🧠 New instances initialize fully loaded and with the safety on
       // 🧠 Instances have a `shoot` method that takes no arguments:
@@ -139,6 +187,9 @@
 
     // 👉 CHALLENGE 3 EBook
     class EBook {
+      constructor(str, char) {
+        
+      }
       // 🧠 Constructor takes two arguments:
       //      * First arg is a string with the whole text of the book
       //      * Second arg is the number of characters contained in a single page of the book
