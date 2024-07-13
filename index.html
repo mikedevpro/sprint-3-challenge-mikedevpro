@@ -95,24 +95,17 @@
       }
 
       push(ints) {
-        const newInt = [];
-        newInt.push(this.ints);
-
-        return newInt;
+        this.ints.push(ints);
+      
+        return this.ints;
       }
 
       getEveryNth(ints) {
-        const newNth = [];
-        const n = 1;
-
-        const nthElement = newNth[n + 1];
-
-        return nthElement;
+        return this.ints.filter((_, index) => index % ints === 0);
       }
 
       getAllReversed(ints) {
-        const reversedInts = [];
-        reversedInts.reverse();
+        return [...this.ints].reverse();
       }
 
 
@@ -252,7 +245,7 @@
           ant.health += 15;
         });
 
-        return "Yum!";
+        return "Yum!"
       }
       // 🧠 Constructor takes **any** number of arguments, which are strings: the names of your ants
       // 🧠 Instances of AntFarm have an `ants` property holding an array of ants:
