@@ -216,22 +216,24 @@
 
     // 👉 CHALLENGE 4 AntFarm
     class AntFarm {
-      constructor(...names) {
-        this.ants = names.map((name) => ({ name, health: 100 }));
+      constructor(...antNames) {
+        this.ants = antNames.map((name) => ({ name, health: 100 }));
       }
 
       work() {
-        if(this.ants.length === 0) {
+        const num = (this.ants.length); 
+
+        if (this.ants.length === 0) {
           return "No ants here. Did you work them to death?";
-        }
+        } 
 
         this.ants.forEach((ant) => {
           ant.health -= 20;
         });
-
+        
         this.ants = this.ants.filter((ant) => ant.health > 0);
 
-        return `${this.ants.length} ants starting work!`;
+        return `${num} ants starting work!`;
       }
 
       feed(name) {
